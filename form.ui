@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>main</class>
+ <widget class="QMainWindow" name="main">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>main</string>
+  </property>
+  <widget class="QWidget" name="centralwidget"/>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuMenu">
+    <property name="title">
+     <string>Menu</string>
+    </property>
+    <addaction name="actionAbsensi"/>
+    <addaction name="actionGaji"/>
+    <addaction name="actionJabatan"/>
+    <addaction name="actionKaryawan"/>
+    <addaction name="actionMitra"/>
+   </widget>
+   <addaction name="menuMenu"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionAbsensi">
+   <property name="text">
+    <string>Absensi</string>
+   </property>
+  </action>
+  <action name="actionGaji">
+   <property name="text">
+    <string>Gaji</string>
+   </property>
+  </action>
+  <action name="actionJabatan">
+   <property name="text">
+    <string>Jabatan</string>
+   </property>
+  </action>
+  <action name="actionKaryawan">
+   <property name="text">
+    <string>Karyawan</string>
+   </property>
+  </action>
+  <action name="actionMitra">
+   <property name="text">
+    <string>Mitra</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
