@@ -85,6 +85,7 @@ class Jabatan(QWidget):
         desk = self.formJabatan.deskripsi.text()
         self.crud.ubahJabatan(kd, nama, tunjangan, gaji, desk)
         self.tampilData()
+        QMessageBox.information(None,"Informasi","Data Berhasil di Ubah")
         self.bersih()
 
     def doHapus(self):
