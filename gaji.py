@@ -11,11 +11,7 @@ class Gaji(QWidget):
 
         ui_file_name = "gaji_form.ui"
         ui_file = QFile(ui_file_name)
-
-        if not ui_file.open(QFile.ReadOnly):
-            print(f"Error: Tidak bisa membuka file {ui_file_name}")
-            sys.exit(-1)
-
+        ui_file.open(QFile.ReadOnly)
         loader = QUiLoader()
         self.formGaji = loader.load(ui_file, None)
         ui_file.close()
@@ -103,15 +99,14 @@ class Gaji(QWidget):
         total_gaji = self.formGaji.total_gaji.text()
         self.crud.ubahGaji(kd_gaji, nik, tunjangan, total_lembur, total_gaji)
         self.tampilData()
+        QMessageBox.information(None,"Informasi","Data Gaji Berhasil di Ubah")
         self.doBersihForm()
 
     def doHapusGaji(self):
         kd_gaji = self.formGaji.kd_gaji.text()
-        if not kd_gaji.strip():
-            QMessageBox.information(None,"Informasi","Kode Gaji harus diisi (Pilih dari tabel)")
-            return
         self.crud.hapusGaji(kd_gaji)
         self.tampilData()
+        QMessageBox.information(None,"Informasi","Data Gaji Berhasil di Hapus")
         self.doBersihForm()
 
     def doCariGaji(self):
