@@ -90,11 +90,9 @@ class Jabatan(QWidget):
 
     def doHapus(self):
         kd = self.formJabatan.kd_jabatan.text()
-        if not kd.strip():
-            QMessageBox.information(None,"Informasi","Pilih data dari tabel untuk dihapus")
-            return
         self.crud.hapusJabatan(kd)
         self.tampilData()
+        QMessageBox.information(None,"Informasi","Data Berhasil di Hapus")
         self.bersih()
 
     def doCari(self):
