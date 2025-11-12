@@ -1,6 +1,7 @@
 # 🧩 Visual3_2310010375
 ### Muhammad Maulana (2310010375)
-
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/82c371ce-ee47-4722-869f-12a417939bea" />
+<img width="250" height="373" alt="image" src="https://github.com/user-attachments/assets/66e06215-42a0-4930-8816-2bf8c8eaed16" />
 ## 🗂️ Sistem Informasi Karyawan (CRUD App) — PySide6 + MySQL
 
 Aplikasi desktop berbasis GUI untuk **manajemen data perusahaan**, mencakup modul:
