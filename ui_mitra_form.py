@@ -158,7 +158,7 @@ class Ui_FormMitra(object):
 
     def retranslateUi(self, FormMitra):
         FormMitra.setWindowTitle(QCoreApplication.translate("FormMitra", u"Form", None))
-        self.label.setText(QCoreApplication.translate("FormMitra", u"HALAMAN ADMIN", None))
+        self.label.setText(QCoreApplication.translate("FormMitra", u"HALAMAN MITRA", None))
         self.btnTambah.setText(QCoreApplication.translate("FormMitra", u"Tambah", None))
         self.btnEdit.setText(QCoreApplication.translate("FormMitra", u"Edit", None))
         self.btnBersih.setText(QCoreApplication.translate("FormMitra", u"BERSIH", None))

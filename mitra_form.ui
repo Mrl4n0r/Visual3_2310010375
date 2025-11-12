@@ -57,7 +57,7 @@
     </font>
    </property>
    <property name="text">
-    <string>HALAMAN ADMIN</string>
+    <string>HALAMAN MITRA</string>
    </property>
   </widget>
   <widget class="QWidget" name="horizontalLayoutWidget">
