@@ -10,10 +10,7 @@ class Karyawan(QWidget):
         super().__init__(parent)
 
         ui_file = QFile("karyawan_form.ui")
-        if not ui_file.open(QFile.ReadOnly):
-            print("Error: Tidak bisa membuka file karyawan_form.ui")
-            sys.exit(-1)
-
+        ui_file.open(QFile.ReadOnly)
         loader = QUiLoader()
         self.formKaryawan = loader.load(ui_file, None)
         ui_file.close()
@@ -125,15 +122,14 @@ class Karyawan(QWidget):
         kjabatan = self.formKaryawan.lineKjabatan.text()
         self.crud.ubahKaryawan(nik, nama, jk, tgl, alamat, agama, notlp, pendidikan, kjabatan)
         self.loadData()
+        QMessageBox.information(None,"Informasi","Data Berhasil di Ubah")
         self.bersih()
 
     def hapus(self):
         nik = self.formKaryawan.lineNik.text()
-        if not nik.strip():
-             QMessageBox.information(None,"Informasi","NIK Karyawan belum di isi (Pilih data dari tabel)")
-             return
         self.crud.hapusKaryawan(nik)
         self.loadData()
+        QMessageBox.information(None,"Informasi","Data Berhasil di Hapus")
         self.bersih()
 
     def pilihBaris(self, row, col):
