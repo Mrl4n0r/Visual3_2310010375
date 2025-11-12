@@ -11,11 +11,7 @@ class Mitra(QWidget):
 
         ui_file_name = "mitra_form.ui"
         ui_file = QFile(ui_file_name)
-
-        if not ui_file.open(QFile.ReadOnly):
-            print(f"Error: Tidak bisa membuka file {ui_file_name}")
-            sys.exit(-1)
-
+        ui_file.open(QFile.ReadOnly)
         loader = QUiLoader()
         self.formMitra = loader.load(ui_file, None)
         ui_file.close()
@@ -108,15 +104,14 @@ class Mitra(QWidget):
         email_mitra = self.formMitra.email_mitra.text()
         self.crud.ubahMitra(kd_mitra, nama_mitra, alamat_mitra, telepon_mitra, email_mitra)
         self.tampilData()
+        QMessageBox.information(None,"Informasi","Data Mitra Berhasil di Ubah")
         self.bersih()
 
     def doHapus(self):
         kd_mitra = self.formMitra.kd_mitra.text()
-        if not kd_mitra.strip():
-            QMessageBox.information(None,"Informasi","Pilih data dari tabel untuk dihapus.")
-            return
         self.crud.hapusMitra(kd_mitra)
         self.tampilData()
+        QMessageBox.information(None,"Informasi","Data Mitra Berhasil di Hapus")
         self.bersih()
 
     def doCari(self):
