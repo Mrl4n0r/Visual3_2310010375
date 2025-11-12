@@ -10,10 +10,7 @@ class Absensi(QWidget):
         super().__init__(parent)
         ui_file_name = "absensi_form.ui"
         ui_file = QFile(ui_file_name)
-        if not ui_file.open(QFile.ReadOnly):
-            print(f"Error: Tidak bisa membuka file {ui_file_name}")
-            sys.exit(-1)
-
+        ui_file.open(QFile.ReadOnly)
         loader = QUiLoader()
         self.formAbsensi = loader.load(ui_file, None)
         ui_file.close()
@@ -113,15 +110,14 @@ class Absensi(QWidget):
         status = self._getStatusFromRadio()
         self.crud.ubahAbsensi(kd_absen, nik, nama_kry, tanggal, status)
         self.tampilData()
+        QMessageBox.information(None,"Informasi","Data Absensi Berhasil di Ubah")
         self.doBersihForm()
 
     def doHapusAbsensi(self):
         kd_absen = self.formAbsensi.kdAbsen.text()
-        if not kd_absen.strip():
-            QMessageBox.information(None,"Informasi","KD Absen harus diisi (Pilih dari tabel)")
-            return
         self.crud.hapusAbsensi(kd_absen)
         self.tampilData()
+        QMessageBox.information(None,"Informasi","Data Absensi Berhasil di Hapus")
         self.doBersihForm()
 
     def doCariAbsensi(self):
