@@ -1,145 +1,84 @@
-# Visual3_2310010375
-# Muhammad Maulana (2310010375)
+# 🧩 Visual3_2310010375
+### Muhammad Maulana (2310010375)
 
-Sistem Informasi Karyawan (CRUD App) dengan PySide6
+## 🗂️ Sistem Informasi Karyawan (CRUD App) — PySide6 + MySQL
 
-Ini adalah aplikasi desktop (GUI) untuk manajemen data perusahaan, yang mencakup pengelolaan karyawan, jabatan, gaji, absensi, dan mitra. Aplikasi ini dibangun murni dengan Python, menggunakan library PySide6 untuk antarmuka pengguna dan MySQL sebagai database.
+Aplikasi desktop berbasis GUI untuk **manajemen data perusahaan**, mencakup modul:
+- Karyawan  
+- Jabatan  
+- Gaji  
+- Absensi  
+- Mitra
 
-Fitur Utama
+Dibangun **sepenuhnya dengan Python** menggunakan **PySide6** untuk antarmuka dan **MySQL** sebagai database.
 
-Aplikasi ini terdiri dari satu menu utama yang mengelola 5 modul (form) terpisah:
+---
 
-Manajemen Karyawan:
+## 🚀 Fitur Utama
 
-Operasi CRUD (Create, Read, Update, Delete) penuh untuk data karyawan.
+### 👨‍💼 1. Manajemen Karyawan
+- CRUD (Create, Read, Update, Delete) lengkap.  
+- Validasi input menggunakan `QMessageBox` agar data tidak kosong.  
+- Menampilkan data dalam `QTableWidget`.  
+- Klik baris tabel → otomatis isi form.  
+- Pencarian real-time berdasarkan NIK, Nama, Alamat, dll.
 
-Form input dengan validasi (QMessageBox) untuk mencegah data kosong.
+---
 
-Menampilkan semua karyawan dalam QTableWidget (tabel data).
+### 🏢 2. Manajemen Jabatan
+- CRUD penuh untuk data jabatan (Kode Jabatan, Nama, Tunjangan, Gaji Pokok, Deskripsi).  
+- Validasi dan konfirmasi sebelum simpan.  
+- Tabel interaktif dengan fitur klik-isi-form.  
+- Pencarian real-time.
 
-Interaksi tabel: Mengklik baris di tabel akan otomatis mengisi form di atasnya.
+---
 
-Pencarian real-time (editcari) yang memfilter tabel secara langsung berdasarkan NIK, Nama, Alamat, dll.
+### 💰 3. Manajemen Gaji
+- CRUD data gaji karyawan.  
+- Penanganan `AUTO_INCREMENT` pada `kd_gaji`.  
+- Tampilan tabel dan pencarian live search.
 
-Manajemen Jabatan:
+---
 
-CRUD penuh untuk data jabatan (Kode Jabatan, Nama, Tunjangan, Gaji Pokok, Deskripsi).
+### 🕒 4. Manajemen Absensi
+- Input absensi harian (Hadir, Izin, Sakit) menggunakan `QRadioButton`.  
+- Penanganan `AUTO_INCREMENT` pada `kd_absen`.  
+- Tampilan tabel dan pencarian langsung.
 
-Validasi data dan konfirmasi simpan.
+---
 
-Tampilan tabel (QTableWidget) dengan fitur klik-untuk-mengisi-form.
+### 🤝 5. Manajemen Mitra 
+- CRUD data mitra   
+- Menangani 5 kolom data kustom.  
+- Tabel dan pencarian live search.
 
-Pencarian real-time (editcari) untuk memfilter jabatan.
+---
 
-Manajemen Gaji:
+## 🧠 Teknologi yang Digunakan
+| Komponen | Keterangan |
+|-----------|-------------|
+| **Python 3.x** | Bahasa pemrograman utama |
+| **PySide6 (Qt for Python)** | Framework GUI |
+| **Qt Designer** | Desain antarmuka `.ui` |
+| **QUiLoader** | Memuat file `.ui` secara dinamis |
+| **MySQL / XAMPP** | Database relasional |
+| **mysql-connector-python** | Driver untuk MySQL |
 
-CRUD untuk data gaji karyawan.
+---
 
-Penanganan Primary Key AUTO_INCREMENT (kd_gaji) saat menyimpan data baru.
+## ⚙️ Cara Menjalankan Proyek
 
-Tampilan tabel (QTableWidget) dan pencarian live search.
+### 1️⃣ Prasyarat
+Pastikan Anda sudah memiliki:
+- Python 3.x  
+- MySQL Server / XAMPP  
+- (Opsional) Git  
 
-Manajemen Absensi:
+---
 
-Menyimpan data absensi harian (Hadir, Izin, Sakit) menggunakan QRadioButton.
+### 2️⃣ Instalasi
 
-Penanganan Primary Key AUTO_INCREMENT (kd_absen).
-
-Tampilan tabel (QTableWidget) dan pencarian live search.
-
-Manajemen Mitra (Admin):
-
-CRUD untuk data mitra (sebelumnya Admin).
-
-Menangani 5 kolom data kustom (Kode Mitra, Nama, Alamat, dll.).
-
-Tampilan tabel (QTableWidget) dan pencarian live search.
-
-Teknologi yang Digunakan
-
-Python 3
-
-PySide6 (Qt for Python): Digunakan untuk semua komponen GUI.
-
-QUiLoader: Memuat file .ui secara dinamis (tanpa perlu kompilasi .ui ke .py).
-
-Qt Designer: Digunakan untuk mendesain semua file antarmuka (.ui).
-
-MySQL: Database relasional untuk menyimpan semua data.
-
-mysql-connector-python: Driver Python untuk berkomunikasi dengan MySQL.
-
-Cara Menjalankan Proyek
-
-Untuk menjalankan proyek ini di komputer Anda, ikuti langkah-langkah berikut:
-
-1. Prasyarat
-
-Pastikan Anda memiliki:
-
-Python 3.x terinstal.
-
-Server MySQL (seperti XAMPP atau MariaDB) berjalan.
-
-Git (opsional, untuk kloning).
-
-2. Instalasi
-
-1. Klone Repositori
-
+#### 🧭 Klone Repositori
+```bash
 git clone https://github.com/Mrl4n0r/Visual3_2310010375
 cd Visual3_2310010375
-
-
-2. Siapkan Database
-
-Buka phpMyAdmin (atau client MySQL Anda).
-
-Buat database baru dengan nama persis visual3_2310010375.
-
-Pilih database tersebut, lalu klik tab "Impor".
-
-Impor file visual3_2310010375 (2).sql yang ada di repositori ini.
-
-3. Buat Virtual Environment (Sangat Direkomendasikan)
-
-# Windows
-python -m venv venv
-venv\Scripts\activate
-
-
-4. Instal Dependensi Python
-
-pip install PySide6 mysql-connector-python
-
-
-5. Jalankan Aplikasi
-File utama untuk menjalankan seluruh aplikasi adalah main.py.
-
-python main.py
-
-
-Struktur Proyek
-
-/
-├── crudDB.py               # File UTAMA: Kelas my_cruddb, berisi SEMUA fungsi SQL (Simpan, Ubah, Hapus, Cari, etc.)
-├── main.py                 # File UTAMA: Menjalankan aplikasi dan menu utama (QMainWindow)
-│
-├── karyawan.py             # File Logika (Python) untuk Form Karyawan
-├── karyawan_form.ui        # File Desain (XML) untuk Form Karyawan
-│
-├── jabatan.py              # File Logika (Python) untuk Form Jabatan
-├── jabatan_form.ui         # File Desain (XML) untuk Form Jabatan
-│
-├── gaji.py                 # File Logika (Python) untuk Form Gaji
-├── gaji_form.ui            # File Desain (XML) untuk Form Gaji
-│
-├── absensi.py              # File Logika (Python) untuk Form Absensi
-├── absensi_form.ui         # File Desain (XML) untuk Form Absensi
-│
-├── mitra.py                # File Logika (Python) untuk Form Mitra (Admin)
-├── mitra_form.ui           # File Desain (XML) untuk Form Mitra (Admin)
-│
-├── form.ui                 # File Desain (XML) untuk Menu Utama (main.py)
-│
-└── visual3_2310010375 (2).sql # File backup database MySQL
